@@ -10,7 +10,7 @@ const LoginSignUp = () => {
           <input className='h-[72px] w-[100%] pl-5 border-2 border-[#c9c9c9]' type="email" placeholder='Email Adress'/>
           <input className='h-[72px] w-[100%] pl-5 border-2 border-[#c9c9c9]' type="password" placeholder='Password'/>
         </div>
-        <button className='w-[100%] h-[72px] text-white bg-[#ff4141] mt-7 text-2xl font-medium cursor-pointer'>Continue</button>
+        <button className='w-[100%] h-[72px] text-white bg-[#ff4141] mt-7 text-2xl font-medium cursor-pointer hover:text-black'>Continue</button>
         <div className='flex gap-1'>
         <p className='mt-5 text-[#5c5c5c] font-medium '>Alredy have an Account?</p><span className='text-[#ff4141] font-semibold mt-5  cursor-pointer'>Click here</span>
         </div>
