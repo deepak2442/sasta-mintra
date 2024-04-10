@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import star_icon from '../components/Assets/star_icon.png'
 import star_dullIcon from '../components/Assets/star_dull_icon.png'
+import { ShopContext } from '../context/shopContext';
 
 const ProductDisplay = (props) => {
-    const{product} = props
+    const{product} = props;
+    const {addToCart} = useContext(ShopContext);
+
   return (
     <div className='flex mx-20 my-[50px]'>
         <div className='flex gap-4'>
@@ -45,7 +48,8 @@ const ProductDisplay = (props) => {
                 <div className='px-18px py-24px bg-[#fbfbfb] rounded-sm cursor-pointer border-1 border-[#ebebeb]'>XXL</div>
             </div>
         </div>
-        <button className='px-10 py-5 w-[200px] text-base font-semibold text-white bg-[#ff4141] mb-10 mt-5 cursor-pointer'>Add To Cart</button>
+        <button className='px-10 py-5 w-[200px] text-base font-semibold text-white bg-[#ff4141] mb-10 mt-5 cursor-pointer'
+        onClick={() =>{addToCart(product.id)}}>Add To Cart</button>
         <p className='mt-3'><span className='font-semibold'>Category : </span><span> Women, T-shirt, Crop Top</span></p>
         <p><span className='font-semibold'>Tags : </span><span> Modern, Latest</span></p>
         </div>

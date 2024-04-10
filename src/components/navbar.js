@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from './Assets/logo.png'
 import carticon from './Assets/cart_icon.png';
 import { Link } from "react-router-dom";
+import { ShopContext } from "../context/shopContext";
 
 
 const Navbar = () => {
 
-    const [menu,setMenu] = useState("shop")
+    const [menu,setMenu] = useState("shop");
+    const {getTotalCartItems} = useContext(ShopContext)
 
     return (
-        <div className="p-3 m-1 flex justify-around shadow-md">
+        <div className="p-3 m-1 flex justify-around shadow-md ">
         <div className="flex items-center gap-3">
        <img src={logo} alt="" />
        <p className="font-semibold h-8">SHOPPER</p>
@@ -27,7 +29,7 @@ const Navbar = () => {
        <div className="flex items-center gap-6">
        <Link to='/login'> <button className="w-36 h-14 outline-none border-solid border-2 border-gray-500 rounded-full text-xl font-thin active:bg-slate-500">Login</button></Link>
        <Link to='/cart'><img className="flex items-center gap-5" src={carticon} alt="" /> </Link> 
-        <span className="w-5 h-5 flex justify-center items-center mt-[-35px] ml-[-30px] rounded-xl text-xs bg-red-500 text-white">0</span>
+        <span className="w-5 h-5 flex justify-center items-center mt-[-35px] ml-[-30px] rounded-xl text-xs bg-red-500 text-white">{getTotalCartItems()}</span>
        </div>
        </div>
         
